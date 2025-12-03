@@ -75,4 +75,4 @@ jobs:
         run: |
           echo "Manual approval required before destroy."
           cd 01-vpc
-          terraform destroy -auto-approve
+          terraform destroy -auto-approve -lock=false
