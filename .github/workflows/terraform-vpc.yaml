@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       TERRAFORM_ACTION:
-        description: "terraform infra creation"
+        description: "terraform infra deploy ? OR destroy ?"
         required: true
         type: choice
         options:
