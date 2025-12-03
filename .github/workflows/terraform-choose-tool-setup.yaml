@@ -68,7 +68,7 @@ jobs:
       # -----------------------------------------
       - name: Terraform Apply/Destroy
         run: 
-          cd 002-tools_install|
+          cd 002-tools_install
           terraform ${{ github.event.inputs.ACTION }} \
             -target=${{ github.event.inputs.TOOL }} \
             -auto-approve
