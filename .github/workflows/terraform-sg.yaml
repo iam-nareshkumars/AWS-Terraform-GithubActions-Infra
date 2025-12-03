@@ -61,7 +61,7 @@ jobs:
       # Terraform Apply (only when TERRAFORMACTION = deploy)
       # ---------------------------------------------------
       - name: Terraform Apply
-        if: ${{ github.event.inputs.TERRAFORM_ACTION == 'deploy' }}
+        if: ${{ github.event.inputs.TERRAFORM_ACTION == 'creation' }}
         run: |
           echo "Manual approval required before apply."
           cd 02-sg
@@ -71,7 +71,7 @@ jobs:
       # Terraform Destroy (only when TERRAFORMACTION = destroy)
       # ---------------------------------------------------
       - name: Terraform Destroy
-        if: ${{ github.event.inputs.TERRAFORM_ACTION == 'destroy' }}
+        if: ${{ github.event.inputs.TERRAFORM_ACTION == 'deletion' }}
         run: |
           echo "Manual approval required before destroy."
           cd 02-sg
