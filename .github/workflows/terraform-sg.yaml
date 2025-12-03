@@ -1,15 +1,15 @@
-name: Terraform VPC Pipeline
+name: Terraform Security group Pipeline
 
 on:
   workflow_dispatch:
     inputs:
       TERRAFORM_ACTION:
-        description: "terraform infra deploy ? OR destroy ?"
+        description: "terraform security creation ? OR deletion ?"
         required: true
         type: choice
         options:
-          - deploy
-          - destroy
+          - creation
+          - deletion
 
 jobs:
   terraform:
@@ -46,7 +46,7 @@ jobs:
       # ------------------------------
       - name: Terraform Init
         run: |
-          cd 01-vpc
+          cd 02-sg
           terraform init -reconfigure
 
       # ------------------------------
@@ -54,7 +54,7 @@ jobs:
       # ------------------------------
       - name: Terraform Plan
         run: |
-          cd 01-vpc
+          cd 02-sg
           terraform plan
           
       # ---------------------------------------------------
@@ -64,7 +64,7 @@ jobs:
         if: ${{ github.event.inputs.TERRAFORM_ACTION == 'deploy' }}
         run: |
           echo "Manual approval required before apply."
-          cd 01-vpc
+          cd 02-sg
           terraform apply -auto-approve
 
       # ---------------------------------------------------
@@ -74,5 +74,5 @@ jobs:
         if: ${{ github.event.inputs.TERRAFORM_ACTION == 'destroy' }}
         run: |
           echo "Manual approval required before destroy."
-          cd 01-vpc
+          cd 02-sg
           terraform destroy -auto-approve
