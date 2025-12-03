@@ -65,7 +65,7 @@ jobs:
         run: |
           echo "Manual approval required before apply."
           cd 01-vpc
-          terraform apply -auto-approve
+          terraform apply -auto-approve -lock=false
 
       # ---------------------------------------------------
       # Terraform Destroy (only when TERRAFORMACTION = destroy)
