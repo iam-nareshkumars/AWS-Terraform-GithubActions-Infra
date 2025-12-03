@@ -58,20 +58,20 @@ jobs:
           terraform plan
           
       # ---------------------------------------------------
-      # Terraform Apply (only when TERRAFORMACTION = deploy)
+      # Terraform Apply (only when TERRAFORMACTION = creation)
       # ---------------------------------------------------
       - name: Terraform Apply
-        if: ${{ github.event.inputs.TERRAFORM_ACTION == 'deploy' }}
+        if: ${{ github.event.inputs.TERRAFORM_ACTION == 'creation' }}
         run: |
           echo "Manual approval required before apply."
           cd 02-sg
           terraform apply -auto-approve
 
       # ---------------------------------------------------
-      # Terraform Destroy (only when TERRAFORMACTION = destroy)
+      # Terraform Destroy (only when TERRAFORMACTION = deletion)
       # ---------------------------------------------------
       - name: Terraform Destroy
-        if: ${{ github.event.inputs.TERRAFORM_ACTION == 'destroy' }}
+        if: ${{ github.event.inputs.TERRAFORM_ACTION == 'deletion' }}
         run: |
           echo "Manual approval required before destroy."
           cd 02-sg

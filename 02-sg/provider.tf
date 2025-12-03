@@ -7,11 +7,11 @@ terraform {
  
     }
 backend "s3" {
-    bucket = "eternal-s3-dev"
-    key    = "securitygroup"
-    region = "us-east-1"
-    dynamodb_table = "s3-table-dev"
-    }
-
+   bucket = "aws-infra-terraform-statefile-bucket-001"
+   key    = "sg/qa/terraform.tfstate"
+   encrypt = true
+   region = "us-east-1"
+   use_lockfile = true
+}
 }
 
