@@ -11,7 +11,7 @@ variable "db_subnet" {
    default = ["192.168.21.0/24","192.168.22.0/24"]
 }
  variable   "environment"  {
-    default = "dev"
+    default = "qa"
  }
 variable  "project" {
     default = "eternalplace"
