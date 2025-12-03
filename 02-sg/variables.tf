@@ -1,5 +1,5 @@
 variable "environment" {
-   default = "dev"
+   default = "qa"
 }
 variable "project" {
   default = "eternalplace"
@@ -11,3 +11,6 @@ variable "sg_description" {
    default = "Security group can be used for mongodb instances"
 }
 
+variable "source" {
+   default = "git::https://github.com/Iam-naresh-devops/SG_module.git" 
+}

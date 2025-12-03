@@ -1,5 +1,5 @@
 module "web_alb" {
-  source = "git::https://github.com/Mygit-Naresh/modules.git"
+  source = var.source
   environment = var.environment
   project = var.project
   sg_name =  "web-alb"
