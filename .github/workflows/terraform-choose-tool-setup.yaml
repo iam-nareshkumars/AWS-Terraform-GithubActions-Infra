@@ -47,13 +47,6 @@ jobs:
          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
          aws-region: ${{ env.AWS_REGION }}
 
-
-      # ------------------------------
-      # Terraform Version Check
-      # ------------------------------
-      - name: Terraform Version
-        run: terraform --version
-
       # ------------------------------
       # Terraform Init
       # ------------------------------
