@@ -53,7 +53,7 @@ jobs:
       - name: Terraform Init
         run: |
           cd 002-tools_install
-          terraform init
+          terraform init -reconfigure
 
       # ------------------------------
       # Terraform Plan
