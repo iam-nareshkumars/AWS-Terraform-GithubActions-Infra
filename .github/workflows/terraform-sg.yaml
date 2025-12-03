@@ -58,7 +58,7 @@ jobs:
           terraform plan
           
       # ---------------------------------------------------
-      # Terraform Apply (only when TERRAFORMACTION = deploy)
+      # Terraform Apply (only when TERRAFORMACTION = creation)
       # ---------------------------------------------------
       - name: Terraform Apply
         if: ${{ github.event.inputs.TERRAFORM_ACTION == 'creation' }}
@@ -68,7 +68,7 @@ jobs:
           terraform apply -auto-approve
 
       # ---------------------------------------------------
-      # Terraform Destroy (only when TERRAFORMACTION = destroy)
+      # Terraform Destroy (only when TERRAFORMACTION = deletion)
       # ---------------------------------------------------
       - name: Terraform Destroy
         if: ${{ github.event.inputs.TERRAFORM_ACTION == 'deletion' }}
