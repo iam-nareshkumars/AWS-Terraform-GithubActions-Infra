@@ -7,8 +7,8 @@ terraform {
  
     }
 backend "s3" {
-   bucket = "aws-infra-terraform-statefile"
-   key    = "vpc/dev/terraform.tfstate"
+   bucket = "aws-infra-terraform-statefile-bucket-001"
+   key    = "vpc/qa/terraform.tfstate"
    encrypt = true
    region = "us-east-1"
    use_lockfile = true
