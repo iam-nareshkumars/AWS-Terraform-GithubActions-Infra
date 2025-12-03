@@ -11,6 +11,6 @@ variable "sg_description" {
    default = "Security group can be used for mongodb instances"
 }
 
-variable "source" {
+/* variable "url" {
    default = "git::https://github.com/Iam-naresh-devops/SG_module.git" 
-}
+} */
